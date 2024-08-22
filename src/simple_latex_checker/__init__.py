@@ -1,1 +1,1 @@
-from .simple_latex_checker import run_check
+from .latex_check import run_check
