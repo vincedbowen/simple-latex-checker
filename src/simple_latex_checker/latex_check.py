@@ -3,6 +3,12 @@ import re
 
 
 def run_check(notebook_path):
+    """Checks that there are no erroneous spaces in the latex math mode and that the number of cells is what 
+    the autograder expects
+
+    Args:
+        notebook_path (string): path to the notebook. Should just be <My Notebook Name>.ipynb
+    """
     # Load current notebook
     with open(notebook_path, 'r', encoding='utf-8') as f:
         notebook = nbformat.read(f, as_version=4)
