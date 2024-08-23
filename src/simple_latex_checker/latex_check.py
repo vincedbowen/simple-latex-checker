@@ -53,7 +53,6 @@ def latex_warning(latex_array, cell):
     for expr in latex_array:
         if expr.startswith(" ") or expr.endswith(" "):
             print(f"Error found in\033[31m cell {cell}\033[0m. Bad expression: {expr}")
-            return True
 
         
     
