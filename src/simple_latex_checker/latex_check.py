@@ -6,7 +6,7 @@ class Nb_checker:
     _has_errors = False
     _one_time_latex_warning = False
 
-    def run_check(self, notebook_path, correct_cells):
+    def run_check(self, notebook_path, correct_cells = None):
         """Checks that there are no erroneous spaces in the latex math mode and that the number of cells is what 
         the autograder expects
 
@@ -22,8 +22,8 @@ class Nb_checker:
         for cell_num, cell in enumerate(notebook.cells, 1):
             if cell.cell_type == 'markdown':
                 raw_markdown_cells.append((cell.source, cell_num))
-
-        self.verify_cells(notebook, correct_cells)
+        if(correct_cells is not None):
+            self.verify_cells(notebook, correct_cells)
         if raw_markdown_cells:
             one_time_warning = False
             for cell_meta in raw_markdown_cells:
