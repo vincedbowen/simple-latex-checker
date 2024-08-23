@@ -1,1 +1,1 @@
-from .latex_check import run_check
+from .latex_check import Nb_checker
