@@ -28,6 +28,17 @@ def run_check(notebook_path):
     else:
         print("No Markdown cells to check!")
 
+def verify_cells(notebook, correct_cells):
+    """Ensures the number of cells matches the number of cells that should be in the notebook for the autograder.
+
+    Args:
+        notebook (nb): current notebook the user is using
+        correct_cells (integer):number of cells the notebook should have
+    """
+    num_cells = len(notebook.cells)
+    if num_cells != correct_cells:
+        print(f"\033[31mIncorrect number of cells\033[0m. Your notebook has {num_cells}, but should have {correct_cells}.")
+
 def find_latex(markdown):
     """Uses Regex Pattern matching to find all instances of Latex math mode in a markdown cell and adds
     to a list
