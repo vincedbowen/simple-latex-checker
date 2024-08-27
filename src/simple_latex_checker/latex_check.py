@@ -31,7 +31,7 @@ class Nb_checker:
                 latex_only_arr = self.find_latex(cell)
                 self.latex_warning(latex_only_arr, cell_num)
             if self._one_time_latex_warning:
-                print("\n\nLatex expressions cannot contain spaces after '\$' when entering math mode or before '\$' when exiting.\nPlease fix these errors before exporting.")
+                print("\n\nLatex expressions cannot contain spaces after '$' when entering math mode or before '$' when exiting.\nPlease fix these errors before exporting.")
         else:
             print("No Markdown cells to check!")
         self.no_errors_print()
